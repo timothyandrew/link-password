@@ -12,7 +12,7 @@ use Rack::Auth::Basic, "Restricted Area" do |username, password|
 end
 
 get '/upload/*/*' do
-  link = Link.first_or_create(hash_url: => params[:splat].shift, url => params[:splat].first)
+  link = Link.first_or_create({hash_url: => params[:splat].shift, url => params[:splat].first})
   "URL is http://imc-choir.heroku.com/link/#{link.hash_url}"
 end
 
