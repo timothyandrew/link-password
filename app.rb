@@ -13,7 +13,7 @@ end
 
 get '/upload/*' do
   link = Link.first_or_create(:url => params[:splat].first)
-  "Set as #{link.hash_url}"
+  "URL is http://imc-choir.heroku.com/link/#{link.hash_url}"
 end
 
 get '/link/:hash' do
