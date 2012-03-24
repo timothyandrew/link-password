@@ -4,7 +4,7 @@ require 'sinatra'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'mysql://root:root@localhost/link-password')
 require './db.rb'
 
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
 puts ENV['DATABASE_URL']
 
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
