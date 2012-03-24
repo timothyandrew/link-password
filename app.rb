@@ -8,7 +8,7 @@ DataMapper.auto_upgrade!
 puts ENV['DATABASE_URL']
 
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
-  [username, password] == ['imc', 'jonty']
+  [username, password] == ['username', 'password']
 end
 
 get '/upload/*/*' do
